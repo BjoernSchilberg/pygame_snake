@@ -1,5 +1,6 @@
 import pygame
 import random
+import sys
 
 # Initialize Pygame
 pygame.init()
@@ -67,6 +68,10 @@ def main():
                     change_to = "LEFT"
                 elif event.key == pygame.K_RIGHT and snake_direction != "LEFT":
                     change_to = "RIGHT"
+                # Exit with ESC or q
+                elif event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
+                    pygame.quit()
+                    sys.exit()
 
         # Update direction
         snake_direction = change_to
